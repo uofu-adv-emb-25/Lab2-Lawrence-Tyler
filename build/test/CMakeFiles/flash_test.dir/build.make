@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tyler/ece6785/labs/lab0
+CMAKE_SOURCE_DIR = /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tyler/ece6785/labs/lab0/build
+CMAKE_BINARY_DIR = /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build
 
 # Utility rule file for flash_test.
 
@@ -67,7 +67,7 @@ include test/CMakeFiles/flash_test.dir/compiler_depend.make
 include test/CMakeFiles/flash_test.dir/progress.make
 
 test/CMakeFiles/flash_test: test/mytest.elf
-	cd /home/tyler/ece6785/labs/lab0/build/test && picotool load -f /home/tyler/ece6785/labs/lab0/build/test/mytest.elf
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/test && picotool load -f /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/test/mytest.elf
 
 flash_test: test/CMakeFiles/flash_test
 flash_test: test/CMakeFiles/flash_test.dir/build.make
@@ -78,10 +78,10 @@ test/CMakeFiles/flash_test.dir/build: flash_test
 .PHONY : test/CMakeFiles/flash_test.dir/build
 
 test/CMakeFiles/flash_test.dir/clean:
-	cd /home/tyler/ece6785/labs/lab0/build/test && $(CMAKE_COMMAND) -P CMakeFiles/flash_test.dir/cmake_clean.cmake
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/test && $(CMAKE_COMMAND) -P CMakeFiles/flash_test.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/flash_test.dir/clean
 
 test/CMakeFiles/flash_test.dir/depend:
-	cd /home/tyler/ece6785/labs/lab0/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tyler/ece6785/labs/lab0 /home/tyler/ece6785/labs/lab0/test /home/tyler/ece6785/labs/lab0/build /home/tyler/ece6785/labs/lab0/build/test /home/tyler/ece6785/labs/lab0/build/test/CMakeFiles/flash_test.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/test /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/test /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/test/CMakeFiles/flash_test.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : test/CMakeFiles/flash_test.dir/depend
 

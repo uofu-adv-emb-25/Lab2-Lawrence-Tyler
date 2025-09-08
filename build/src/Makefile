@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tyler/ece6785/labs/lab0
+CMAKE_SOURCE_DIR = /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tyler/ece6785/labs/lab0/build
+CMAKE_BINARY_DIR = /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -77,8 +77,8 @@ test/fast: test
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -97,14 +97,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/tyler/ece6785/labs/lab0/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/tyler/ece6785/labs/lab0/build/CMakeFiles /home/tyler/ece6785/labs/lab0/build/src//CMakeFiles/progress.marks
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tyler/ece6785/labs/lab0/build/CMakeFiles 0
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/CMakeFiles /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/src//CMakeFiles/progress.marks
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -113,22 +113,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/tyler/ece6785/labs/lab0/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/hello_freertos.dir/rule:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/hello_freertos.dir/rule
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/hello_freertos.dir/rule
 .PHONY : src/CMakeFiles/hello_freertos.dir/rule
 
 # Convenience name for target.
@@ -137,26 +137,12 @@ hello_freertos: src/CMakeFiles/hello_freertos.dir/rule
 
 # fast build rule for target.
 hello_freertos/fast:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/build
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/build
 .PHONY : hello_freertos/fast
 
 # Convenience name for target.
-src/CMakeFiles/blink.dir/rule:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/blink.dir/rule
-.PHONY : src/CMakeFiles/blink.dir/rule
-
-# Convenience name for target.
-blink: src/CMakeFiles/blink.dir/rule
-.PHONY : blink
-
-# fast build rule for target.
-blink/fast:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/build
-.PHONY : blink/fast
-
-# Convenience name for target.
 src/CMakeFiles/flash.dir/rule:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/flash.dir/rule
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/flash.dir/rule
 .PHONY : src/CMakeFiles/flash.dir/rule
 
 # Convenience name for target.
@@ -165,39 +151,15 @@ flash: src/CMakeFiles/flash.dir/rule
 
 # fast build rule for target.
 flash/fast:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/flash.dir/build.make src/CMakeFiles/flash.dir/build
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/flash.dir/build.make src/CMakeFiles/flash.dir/build
 .PHONY : flash/fast
-
-blink.o: blink.c.o
-.PHONY : blink.o
-
-# target to build an object file
-blink.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/blink.c.o
-.PHONY : blink.c.o
-
-blink.i: blink.c.i
-.PHONY : blink.i
-
-# target to preprocess a source file
-blink.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/blink.c.i
-.PHONY : blink.c.i
-
-blink.s: blink.c.s
-.PHONY : blink.s
-
-# target to generate assembly for a file
-blink.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/blink.c.s
-.PHONY : blink.c.s
 
 hello_freertos.o: hello_freertos.c.o
 .PHONY : hello_freertos.o
 
 # target to build an object file
 hello_freertos.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/hello_freertos.c.o
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/hello_freertos.c.o
 .PHONY : hello_freertos.c.o
 
 hello_freertos.i: hello_freertos.c.i
@@ -205,7 +167,7 @@ hello_freertos.i: hello_freertos.c.i
 
 # target to preprocess a source file
 hello_freertos.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/hello_freertos.c.i
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/hello_freertos.c.i
 .PHONY : hello_freertos.c.i
 
 hello_freertos.s: hello_freertos.c.s
@@ -213,2678 +175,2448 @@ hello_freertos.s: hello_freertos.c.s
 
 # target to generate assembly for a file
 hello_freertos.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/hello_freertos.c.s
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/hello_freertos.c.s
 .PHONY : hello_freertos.c.s
 
-home/tyler/ece6785/FreeRTOS-Kernel/croutine.o: home/tyler/ece6785/FreeRTOS-Kernel/croutine.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/croutine.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.o
 
 # target to build an object file
-home/tyler/ece6785/FreeRTOS-Kernel/croutine.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/croutine.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/croutine.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.c.o
 
-home/tyler/ece6785/FreeRTOS-Kernel/croutine.i: home/tyler/ece6785/FreeRTOS-Kernel/croutine.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/croutine.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.i
 
 # target to preprocess a source file
-home/tyler/ece6785/FreeRTOS-Kernel/croutine.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/croutine.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/croutine.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.c.i
 
-home/tyler/ece6785/FreeRTOS-Kernel/croutine.s: home/tyler/ece6785/FreeRTOS-Kernel/croutine.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/croutine.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/FreeRTOS-Kernel/croutine.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/croutine.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/croutine.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.c.s
 
-home/tyler/ece6785/FreeRTOS-Kernel/event_groups.o: home/tyler/ece6785/FreeRTOS-Kernel/event_groups.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/event_groups.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.o
 
 # target to build an object file
-home/tyler/ece6785/FreeRTOS-Kernel/event_groups.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/event_groups.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/event_groups.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.c.o
 
-home/tyler/ece6785/FreeRTOS-Kernel/event_groups.i: home/tyler/ece6785/FreeRTOS-Kernel/event_groups.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/event_groups.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.i
 
 # target to preprocess a source file
-home/tyler/ece6785/FreeRTOS-Kernel/event_groups.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/event_groups.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/event_groups.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.c.i
 
-home/tyler/ece6785/FreeRTOS-Kernel/event_groups.s: home/tyler/ece6785/FreeRTOS-Kernel/event_groups.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/event_groups.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/FreeRTOS-Kernel/event_groups.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/event_groups.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/event_groups.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.c.s
 
-home/tyler/ece6785/FreeRTOS-Kernel/list.o: home/tyler/ece6785/FreeRTOS-Kernel/list.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/list.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.o
 
 # target to build an object file
-home/tyler/ece6785/FreeRTOS-Kernel/list.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/list.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/list.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.c.o
 
-home/tyler/ece6785/FreeRTOS-Kernel/list.i: home/tyler/ece6785/FreeRTOS-Kernel/list.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/list.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.i
 
 # target to preprocess a source file
-home/tyler/ece6785/FreeRTOS-Kernel/list.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/list.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/list.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.c.i
 
-home/tyler/ece6785/FreeRTOS-Kernel/list.s: home/tyler/ece6785/FreeRTOS-Kernel/list.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/list.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/FreeRTOS-Kernel/list.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/list.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/list.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.c.s
 
-home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.o: home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.o
 
 # target to build an object file
-home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.c.o
 
-home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.i: home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.i
 
 # target to preprocess a source file
-home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.c.i
 
-home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.s: home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.c.s
 
-home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.o: home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.o
 
 # target to build an object file
-home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.c.o
 
-home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.i: home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.i
 
 # target to preprocess a source file
-home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.c.i
 
-home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.s: home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.c.s
 
-home/tyler/ece6785/FreeRTOS-Kernel/queue.o: home/tyler/ece6785/FreeRTOS-Kernel/queue.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/queue.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.o
 
 # target to build an object file
-home/tyler/ece6785/FreeRTOS-Kernel/queue.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/queue.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/queue.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.c.o
 
-home/tyler/ece6785/FreeRTOS-Kernel/queue.i: home/tyler/ece6785/FreeRTOS-Kernel/queue.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/queue.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.i
 
 # target to preprocess a source file
-home/tyler/ece6785/FreeRTOS-Kernel/queue.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/queue.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/queue.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.c.i
 
-home/tyler/ece6785/FreeRTOS-Kernel/queue.s: home/tyler/ece6785/FreeRTOS-Kernel/queue.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/queue.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/FreeRTOS-Kernel/queue.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/queue.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/queue.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.c.s
 
-home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.o: home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.o
 
 # target to build an object file
-home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.c.o
 
-home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.i: home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.i
 
 # target to preprocess a source file
-home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.c.i
 
-home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.s: home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.c.s
 
-home/tyler/ece6785/FreeRTOS-Kernel/tasks.o: home/tyler/ece6785/FreeRTOS-Kernel/tasks.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/tasks.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.o
 
 # target to build an object file
-home/tyler/ece6785/FreeRTOS-Kernel/tasks.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/tasks.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/tasks.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o
 
-home/tyler/ece6785/FreeRTOS-Kernel/tasks.i: home/tyler/ece6785/FreeRTOS-Kernel/tasks.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/tasks.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.i
 
 # target to preprocess a source file
-home/tyler/ece6785/FreeRTOS-Kernel/tasks.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/tasks.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/tasks.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
 
-home/tyler/ece6785/FreeRTOS-Kernel/tasks.s: home/tyler/ece6785/FreeRTOS-Kernel/tasks.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/tasks.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/FreeRTOS-Kernel/tasks.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/tasks.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/tasks.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
 
-home/tyler/ece6785/FreeRTOS-Kernel/timers.o: home/tyler/ece6785/FreeRTOS-Kernel/timers.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/timers.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.o
 
 # target to build an object file
-home/tyler/ece6785/FreeRTOS-Kernel/timers.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/timers.c.o
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/timers.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.c.o
 
-home/tyler/ece6785/FreeRTOS-Kernel/timers.i: home/tyler/ece6785/FreeRTOS-Kernel/timers.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/timers.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.i
 
 # target to preprocess a source file
-home/tyler/ece6785/FreeRTOS-Kernel/timers.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/timers.c.i
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/timers.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.c.i
 
-home/tyler/ece6785/FreeRTOS-Kernel/timers.s: home/tyler/ece6785/FreeRTOS-Kernel/timers.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/timers.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/FreeRTOS-Kernel/timers.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/FreeRTOS-Kernel/timers.c.s
-.PHONY : home/tyler/ece6785/FreeRTOS-Kernel/timers.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.c.s
 
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.o: home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.c.o
 
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.i: home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.c.i
 
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.s: home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.c.s
 
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.o: home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.c.o
 
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.i: home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.c.i
 
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.s: home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.c.s
 
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.o: home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.c.o
 
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.i: home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.c.i
 
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.s: home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.c.s
 
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.o: home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.c.o
 
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.i: home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.c.i
 
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.s: home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.o: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.i: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.s: home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.c.s
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.o: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.c.o
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.i: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.c.i
 
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.s: home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.c.s
 
-home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.o: home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.c.o
 
-home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.i: home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.c.i
 
-home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.s: home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.c.s
 
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.o: home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.c.o
 
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.i: home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.c.i
 
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.s: home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.c.s
 
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.o: home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.c.o
 
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.i: home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.c.i
 
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.s: home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.c.s
 
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.o: home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.c.o
 
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.i: home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.c.i
 
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.s: home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.c.s
 
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.o: home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_divider/divider.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_divider/divider.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_divider/divider.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_divider/divider.S.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_divider/divider.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_divider/divider.S.o
 
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.i: home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.o
 
+# target to build an object file
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.c.o
+
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.i
+
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.c.i
 
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.s: home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.c.s
 
-home/tyler/ece6785/pico-sdk/src/common/pico_time/time.o: home/tyler/ece6785/pico-sdk/src/common/pico_time/time.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_time/time.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/common/pico_time/time.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_time/time.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_time/time.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_time/time.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.c.o
 
-home/tyler/ece6785/pico-sdk/src/common/pico_time/time.i: home/tyler/ece6785/pico-sdk/src/common/pico_time/time.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_time/time.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/common/pico_time/time.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_time/time.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_time/time.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_time/time.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.c.i
 
-home/tyler/ece6785/pico-sdk/src/common/pico_time/time.s: home/tyler/ece6785/pico-sdk/src/common/pico_time/time.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_time/time.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/common/pico_time/time.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_time/time.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_time/time.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_time/time.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.c.s
 
-home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.o: home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.c.o
 
-home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.i: home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.c.i
 
-home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.s: home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.c.s
 
-home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.o: home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.c.o
 
-home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.i: home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.c.i
 
-home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.s: home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.c.s
 
-home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.o: home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.c.o
 
-home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.i: home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.c.i
 
-home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.s: home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.c.s
+
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq_handler_chain.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq_handler_chain.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq_handler_chain.o
+
+# target to build an object file
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq_handler_chain.S.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq_handler_chain.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq_handler_chain.S.o
 
-home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.o: home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.c.o
 
-home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.i: home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.c.i
 
-home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.s: home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.o: home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.i: home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.s: home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_divider/divider.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_divider/divider.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_divider/divider.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_divider/divider.S.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_divider/divider.S.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_divider/divider.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_divider/divider.S.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.i
 
-# target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.c.o
-
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.i
-
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.i
 
-# target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.c.o
-
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.i
-
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.c.s
+
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bit_ops/bit_ops_aeabi.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bit_ops/bit_ops_aeabi.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.o
+# target to build an object file
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
 
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.o
+
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.c.s
+
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_crt0/crt0.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_crt0/crt0.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_crt0/crt0.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.o
+# target to build an object file
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_crt0/crt0.S.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_crt0/crt0.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_crt0/crt0.S.o
+
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.cpp.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.cpp.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.cpp.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.cpp.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.cpp.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.cpp.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.cpp.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.cpp.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.cpp.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.cpp.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.cpp.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.cpp.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.o: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.i: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.s: home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.c.s
-
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.o
-
-# target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_crt0/crt0.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_crt0/crt0.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_divider/divider_hardware.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_divider/divider_hardware.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_divider/divider_hardware.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_divider/divider_hardware.S.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_divider/divider_hardware.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_divider/divider_hardware.S.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_aeabi_rp2040.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_aeabi_rp2040.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o
-
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.i
-
-# target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.i
-
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.s
-
-# target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_aeabi_rp2040.S.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.o
 
+# target to build an object file
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o
+
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.i
+
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_aeabi_rp2040.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_aeabi_rp2040.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_aeabi_rp2040.S.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.o
 
+# target to build an object file
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.i
+
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.o
-
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
 
-# target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.s
-
-# target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.s
+# target to build an object file
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s
-
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_divider/divider_hardware.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_divider/divider_hardware.o
-
-# target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_mem_ops/mem_ops_aeabi.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_mem_ops/mem_ops_aeabi.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.i
 
-# target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o
-
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.i
-
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.i
 
-# target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
-
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.i
-
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.i
 
-# target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.o
+# target to preprocess a source file
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.i
+
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.s
+
+# target to generate assembly for a file
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.c.s
-
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.o
-
-# target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.o: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.c.o
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.i: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.i
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.c.i
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.s: home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.s
+home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.c.s
+.PHONY : home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.o: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.i: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.s: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.o: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.i: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.s: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.o: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.i: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.s: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.o: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.i: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.s: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.o: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.i: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.s: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.o: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.i: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.s: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.o: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.i: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.s: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.o: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.i: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.s: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.c.s
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.o: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.o: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.o
 
 # target to build an object file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.c.o:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.c.o
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.i: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.i
 
 # target to preprocess a source file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.c.i:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.c.i
 
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s: home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.s: home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
-.PHONY : home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
+home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.c.s:
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/hello_freertos.dir/build.make src/CMakeFiles/hello_freertos.dir/home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.c.s
 
 # Help Target
 help:
@@ -2896,322 +2628,315 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... flash"
-	@echo "... blink"
 	@echo "... hello_freertos"
-	@echo "... blink.o"
-	@echo "... blink.i"
-	@echo "... blink.s"
 	@echo "... hello_freertos.o"
 	@echo "... hello_freertos.i"
 	@echo "... hello_freertos.s"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/croutine.o"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/croutine.i"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/croutine.s"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/event_groups.o"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/event_groups.i"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/event_groups.s"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/list.o"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/list.i"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/list.s"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.o"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.i"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/portable/MemMang/heap_4.s"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.o"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.i"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.s"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/queue.o"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/queue.i"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/queue.s"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.o"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.i"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/stream_buffer.s"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/tasks.o"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/tasks.i"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/tasks.s"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/timers.o"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/timers.i"
-	@echo "... home/tyler/ece6785/FreeRTOS-Kernel/timers.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_ll.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/cyw43-driver/src/cyw43_stats.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/hid/hid_device.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/midi/midi_device.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/msc/msc_device.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/net/ncm_device.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/class/video/video_device.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/common/tusb_fifo.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/device/usbd_control.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.s"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.o"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.i"
-	@echo "... home/tyler/ece6785/pico-sdk/lib/tinyusb/src/tusb.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/hardware_claim/claim.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_sync/critical_section.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_sync/lock_core.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_sync/mutex.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_sync/sem.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_time/time.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_time/time.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_time/time.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_time/timeout_helper.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_util/datetime.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_util/pheap.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/common/pico_util/queue.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2040/pico_platform/platform.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_boot_lock/boot_lock.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_clocks/clocks.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_divider/divider.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_dma/dma.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_exception/exception.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_flash/flash.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_gpio/gpio.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pio/pio.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_pll/pll.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync/sync.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_ticks/ticks.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_timer/timer.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_uart/uart.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_vreg/vreg.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_xosc/xosc.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_base.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_freertos.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_atomic/atomic.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_bootrom/bootrom_lock.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_crt0/crt0.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_divider/divider_hardware.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_math.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_flash/flash.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_math.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_malloc/malloc.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_multicore/multicore.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_common/common.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_platform_panic/panic.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_printf/printf.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime/runtime.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio/stdio.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.o"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i"
-	@echo "... home/tyler/ece6785/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ctrl.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_ll.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_lwip.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/cyw43-driver/src/cyw43_stats.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/audio/audio_device.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/cdc/cdc_device.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_device.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/dfu/dfu_rt_device.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/hid/hid_device.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/midi/midi_device.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/msc/msc_device.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ecm_rndis_device.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/net/ncm_device.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/usbtmc/usbtmc_device.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/vendor/vendor_device.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/class/video/video_device.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/common/tusb_fifo.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/device/usbd_control.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/lib/tinyusb/src/tusb.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim/claim.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/critical_section.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/lock_core.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/mutex.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_sync/sem.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/time.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_time/timeout_helper.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/datetime.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/pheap.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/common/pico_util/queue.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2040/pico_platform/platform.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_boot_lock/boot_lock.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_clocks/clocks.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_divider/divider.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_dma/dma.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_exception/exception.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_flash/flash.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_gpio/gpio.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_irq/irq_handler_chain.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pio/pio.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_pll/pll.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync/sync.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_ticks/ticks.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_timer/timer.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_uart/uart.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_vreg/vreg.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_watchdog/watchdog.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xip_cache/xip_cache.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_xosc/xosc.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_base.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_freertos.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_async_context/async_context_threadsafe_background.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_atomic/atomic.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bit_ops/bit_ops_aeabi.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_bootrom/bootrom_lock.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_clib_interface/newlib_interface.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_crt0/crt0.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cxx_options/new_delete.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_cyw43_driver/cyw43_driver.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_divider/divider_hardware.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_aeabi_rp2040.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_init_rom_rp2040.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_math.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_flash/flash.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_aeabi_rp2040.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_init_rom_rp2040.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_math.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_malloc/malloc.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_mem_ops/mem_ops_aeabi.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_multicore/multicore.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_common/common.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_platform_panic/panic.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_printf/printf.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime/runtime.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_clocks.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_standard_binary_info/standard_binary_info.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio/stdio.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/reset_interface.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_stdlib/stdlib.s"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.o"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.i"
+	@echo "... home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/pico_unique_id/unique_id.s"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.o"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.i"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/croutine.s"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.o"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.i"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/event_groups.s"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.o"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.i"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/list.s"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.o"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.i"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/MemMang/heap_4.s"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.o"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.i"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.s"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.o"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.i"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/queue.s"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.o"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.i"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/stream_buffer.s"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.o"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.i"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/tasks.s"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.o"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.i"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/RTOS_Kernel/FreeRTOS-Kernel/timers.s"
 .PHONY : help
 
 
@@ -3223,6 +2948,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/tyler/ece6785/labs/lab0/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

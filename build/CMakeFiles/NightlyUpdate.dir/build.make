@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tyler/ece6785/labs/lab0
+CMAKE_SOURCE_DIR = /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tyler/ece6785/labs/lab0/build
+CMAKE_BINARY_DIR = /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build
 
 # Utility rule file for NightlyUpdate.
 
@@ -82,6 +82,6 @@ CMakeFiles/NightlyUpdate.dir/clean:
 .PHONY : CMakeFiles/NightlyUpdate.dir/clean
 
 CMakeFiles/NightlyUpdate.dir/depend:
-	cd /home/tyler/ece6785/labs/lab0/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tyler/ece6785/labs/lab0 /home/tyler/ece6785/labs/lab0 /home/tyler/ece6785/labs/lab0/build /home/tyler/ece6785/labs/lab0/build /home/tyler/ece6785/labs/lab0/build/CMakeFiles/NightlyUpdate.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/CMakeFiles/NightlyUpdate.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/NightlyUpdate.dir/depend
 

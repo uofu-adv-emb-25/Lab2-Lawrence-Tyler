@@ -1,4 +1,4 @@
-# Install script for directory: /home/tyler/ece6785/pico-sdk/src/common/hardware_claim
+# Install script for directory: /home/lawrence/.pico-sdk/sdk/2.2.0/src/common/hardware_claim
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

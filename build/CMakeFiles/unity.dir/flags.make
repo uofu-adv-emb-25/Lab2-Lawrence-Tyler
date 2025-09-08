@@ -4,7 +4,7 @@
 # compile C with /usr/bin/arm-none-eabi-gcc
 C_DEFINES = -DPICO_ENTER_USB_BOOT_ON_EXIT=1 -DconfigNUMBER_OF_CORES=1
 
-C_INCLUDES = -I/home/tyler/ece6785/Unity/src -I/home/tyler/ece6785/labs/lab0/include
+C_INCLUDES = -I/home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src -I/home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/include
 
 C_FLAGS = -mcpu=cortex-m0plus -mthumb -g -O3 -DNDEBUG -std=gnu11
 

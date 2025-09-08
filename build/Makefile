@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tyler/ece6785/labs/lab0
+CMAKE_SOURCE_DIR = /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tyler/ece6785/labs/lab0/build
+CMAKE_BINARY_DIR = /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -77,8 +77,8 @@ test/fast: test
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -97,9 +97,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tyler/ece6785/labs/lab0/build/CMakeFiles /home/tyler/ece6785/labs/lab0/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/CMakeFiles /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tyler/ece6785/labs/lab0/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -582,19 +582,6 @@ hello_freertos/fast:
 .PHONY : hello_freertos/fast
 
 #=============================================================================
-# Target rules for targets named blink
-
-# Build rule for target.
-blink: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 blink
-.PHONY : blink
-
-# fast build rule for target.
-blink/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/blink.dir/build.make src/CMakeFiles/blink.dir/build
-.PHONY : blink/fast
-
-#=============================================================================
 # Target rules for targets named flash
 
 # Build rule for target.
@@ -633,29 +620,29 @@ flash_test/fast:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/flash_test.dir/build.make test/CMakeFiles/flash_test.dir/build
 .PHONY : flash_test/fast
 
-home/tyler/ece6785/Unity/src/unity.o: home/tyler/ece6785/Unity/src/unity.c.o
-.PHONY : home/tyler/ece6785/Unity/src/unity.o
+home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.o: home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.o
 
 # target to build an object file
-home/tyler/ece6785/Unity/src/unity.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/home/tyler/ece6785/Unity/src/unity.c.o
-.PHONY : home/tyler/ece6785/Unity/src/unity.c.o
+home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.c.o
+.PHONY : home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.c.o
 
-home/tyler/ece6785/Unity/src/unity.i: home/tyler/ece6785/Unity/src/unity.c.i
-.PHONY : home/tyler/ece6785/Unity/src/unity.i
+home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.i: home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.i
 
 # target to preprocess a source file
-home/tyler/ece6785/Unity/src/unity.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/home/tyler/ece6785/Unity/src/unity.c.i
-.PHONY : home/tyler/ece6785/Unity/src/unity.c.i
+home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.c.i
+.PHONY : home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.c.i
 
-home/tyler/ece6785/Unity/src/unity.s: home/tyler/ece6785/Unity/src/unity.c.s
-.PHONY : home/tyler/ece6785/Unity/src/unity.s
+home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.s: home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.s
 
 # target to generate assembly for a file
-home/tyler/ece6785/Unity/src/unity.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/home/tyler/ece6785/Unity/src/unity.c.s
-.PHONY : home/tyler/ece6785/Unity/src/unity.c.s
+home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.c.s
+.PHONY : home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.c.s
 
 # Help Target
 help:
@@ -699,15 +686,14 @@ help:
 	@echo "... flash"
 	@echo "... flash_test"
 	@echo "... pico_status_led_ws2812_pio_h"
-	@echo "... blink"
 	@echo "... bs2_default"
 	@echo "... bs2_default_library"
 	@echo "... hello_freertos"
 	@echo "... mytest"
 	@echo "... unity"
-	@echo "... home/tyler/ece6785/Unity/src/unity.o"
-	@echo "... home/tyler/ece6785/Unity/src/unity.i"
-	@echo "... home/tyler/ece6785/Unity/src/unity.s"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.o"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.i"
+	@echo "... home/lawrence/Documents/Repos/ECE5785/Unity/Unity/src/unity.s"
 .PHONY : help
 
 

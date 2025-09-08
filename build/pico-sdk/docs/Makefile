@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tyler/ece6785/labs/lab0
+CMAKE_SOURCE_DIR = /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tyler/ece6785/labs/lab0/build
+CMAKE_BINARY_DIR = /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -77,8 +77,8 @@ test/fast: test
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -97,14 +97,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/tyler/ece6785/labs/lab0/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/tyler/ece6785/labs/lab0/build/CMakeFiles /home/tyler/ece6785/labs/lab0/build/pico-sdk/docs//CMakeFiles/progress.marks
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/docs/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tyler/ece6785/labs/lab0/build/CMakeFiles 0
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/CMakeFiles /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/pico-sdk/docs//CMakeFiles/progress.marks
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/docs/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/docs/clean
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/docs/clean
 .PHONY : clean
 
 # The main clean target
@@ -113,17 +113,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/docs/preinstall
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/docs/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/tyler/ece6785/labs/lab0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/docs/preinstall
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/docs/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/tyler/ece6785/labs/lab0/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -146,6 +146,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/tyler/ece6785/labs/lab0/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

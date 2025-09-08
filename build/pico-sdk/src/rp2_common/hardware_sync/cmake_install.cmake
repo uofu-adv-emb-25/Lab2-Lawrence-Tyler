@@ -1,4 +1,4 @@
-# Install script for directory: /home/tyler/ece6785/pico-sdk/src/rp2_common/hardware_sync
+# Install script for directory: /home/lawrence/.pico-sdk/sdk/2.2.0/src/rp2_common/hardware_sync
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

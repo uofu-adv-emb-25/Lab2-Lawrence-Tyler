@@ -1,4 +1,4 @@
-# Install script for directory: /home/tyler/ece6785/labs/lab0/src
+# Install script for directory: /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

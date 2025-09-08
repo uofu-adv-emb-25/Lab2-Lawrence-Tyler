@@ -1,4 +1,4 @@
-# Install script for directory: /home/tyler/ece6785/labs/lab0
+# Install script for directory: /home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,10 +39,10 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/tyler/ece6785/labs/lab0/build/FREERTOS_KERNEL/cmake_install.cmake")
-  include("/home/tyler/ece6785/labs/lab0/build/pico-sdk/cmake_install.cmake")
-  include("/home/tyler/ece6785/labs/lab0/build/src/cmake_install.cmake")
-  include("/home/tyler/ece6785/labs/lab0/build/test/cmake_install.cmake")
+  include("/home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/FREERTOS_KERNEL/cmake_install.cmake")
+  include("/home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/pico-sdk/cmake_install.cmake")
+  include("/home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/src/cmake_install.cmake")
+  include("/home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/test/cmake_install.cmake")
 
 endif()
 
@@ -54,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/tyler/ece6785/labs/lab0/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

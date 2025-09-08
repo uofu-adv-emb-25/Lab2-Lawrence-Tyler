@@ -1,4 +1,4 @@
-# Install script for directory: /home/tyler/ece6785/pico-sdk
+# Install script for directory: /home/lawrence/.pico-sdk/sdk/2.2.0
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,16 +39,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/tyler/ece6785/labs/lab0/build/pico-sdk/tools/cmake_install.cmake")
+  include("/home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/pico-sdk/tools/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/tyler/ece6785/labs/lab0/build/pico-sdk/src/cmake_install.cmake")
+  include("/home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/pico-sdk/src/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/tyler/ece6785/labs/lab0/build/pico-sdk/docs/cmake_install.cmake")
+  include("/home/lawrence/Documents/Repos/ECE5785/Labs/Lab2-Lawrence-Tyler/build/pico-sdk/docs/cmake_install.cmake")
 endif()
 
