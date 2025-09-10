@@ -24,7 +24,11 @@ void test_multiplication(void)
 
 int main (void)
 {
+<<<<<<< Updated upstream
     while (1){
+=======
+    while(1) {
+>>>>>>> Stashed changes
         stdio_init_all();
         sleep_ms(5000); // Give time for TTY to attach.
         printf("Start tests\n");
