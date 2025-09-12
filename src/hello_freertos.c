@@ -29,7 +29,7 @@ void blink_task(__unused void *params) {
     while (true) {
         cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, on);
         if (count++ % 11) on = !on; // Possible undefined behavior with int overflow with count
-        vTaskDelay(500); // waits 500ms for scheduler touches it
+        vTaskDelay(500); // waits 500ms before scheduler touches it
     }
 }
 
