@@ -1,5 +1,5 @@
-# Lab 0 Lawrence and Tyler
+# Lab 2 Lawrence and Tyler
 
-This project is an introductory lab to learn about how to use the toolchain for the PICO W. The M.V.P of this project is a working build of a provided blink.c code.
+This project is about testing the PICO W environment using UNITY framework.
 
-![example workflow](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/main.yml/badge.svg)
+[![Build Status](https://github.com/uofu-adv-emb-25/Lab2-Lawrence-Tyler/actions/workflows/main.yml/badge.svg)](https://github.com/uofu-adv-emb-25/Lab2-Lawrence-Tyler/actions/workflows/main.yml)
