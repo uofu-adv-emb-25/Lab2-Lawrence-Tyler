@@ -14,6 +14,7 @@
 #include "pico/stdlib.h"
 #include "pico/multicore.h"
 #include "pico/cyw43_arch.h"
+#include "routine.h"
 
 int count = 0;
 bool on = false;
@@ -23,28 +24,12 @@ bool on = false;
 #define MAIN_TASK_STACK_SIZE configMINIMAL_STACK_SIZE
 #define BLINK_TASK_STACK_SIZE configMINIMAL_STACK_SIZE
 
-// Function to blink the led
-void blink_led() {
-    cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, on);
-    if (count++ % 11) on = !on; // Possible undefined behavior with int overflow with count
-    vTaskDelay(500); // waits 500ms before scheduler touches it
-}
-
 // Blink thread blinks with delay of 500ms
 void blink_task(__unused void *params) {
     hard_assert(cyw43_arch_init() == PICO_OK);
     while (true) {
-        blink_led();
+        blink_led(&count, &on);
     }
-}
-
-char get_Char(char c){
-    // Lowercase letter input outputs Uppercase letter and vice versa
-    // Non-alphabet input chars are just output as the character
-    if (c <= 'z' && c >= 'a') putchar(c - 32);
-    else if (c >= 'A' && c <= 'Z') putchar(c + 32);
-    else putchar(c);
-    return c;
 }
 
 // Spawn Blink thread and run task
@@ -54,7 +39,8 @@ void main_task(__unused void *params) {
                 BLINK_TASK_STACK_SIZE, NULL, BLINK_TASK_PRIORITY, NULL);
     char c;
     while(true) {
-        get_Char(c);
+        c = getchar();
+        putchar(get_Char(c));
     }
 }
 
